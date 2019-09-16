@@ -34,7 +34,12 @@ namespace QuaverCodeChallenge.Servcies
             var jsonItemList = json["item"];
             foreach (var i in jsonItemList)
             {
-                repoNames.Add((i["owner"]["url"]).ToString().ToUpper());
+                //error here, need to iterate through JArray to retreive url value
+                foreach(var j in i["owner"]){
+                    //.ToUpper -> .ToLower() to keep consistency with reading from file on line 84
+                    // and to ensure no duplicates are in file when writing to file
+                    repoNames.Add((j["url"]).ToString().ToLower());
+                }
             }
 
             // Get what url's are currentyly stored in the text file
@@ -76,7 +81,7 @@ namespace QuaverCodeChallenge.Servcies
                 IList<string> repoNames = new List<string>();
                 while ((ln = file.ReadLine()) != null)
                 {
-                    repoNames.Add(ln.ToLower());
+                    repoNames.Add((encryption.DecryptString(ln)).ToLower());
                     counter++;
                 }
                 file.Close();
