@@ -17,11 +17,3 @@ Remember there should be no duplicates of any URLs in the text file!
 * Clone down the solution and copy the QuaverCodeChallenge folder into your own GitHub repo.
 * Send us the link (email implementation@QuaverMusic.com) to your GitHub solution when complete.
 
-# Comments
-* Most of my comments through debugging process can be found in commit description,
-    although I will add, I looked for another problem which I think it may be inside ErrorViewModel.
-    Because I tried to replicate a similar Model design and return value on Razor page and was unauccessful.
-    I couldn't find a way to solve that, if it even were an issue in the first place. If I may ask, did the
-    ErrorViewModel actually had an error in it?
-* Had a lot of fun going through this, thank you!
-
